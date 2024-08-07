@@ -1,0 +1,9 @@
+{
+    "src": [
+        {"folder2": "default"},
+        {"folder1": "default"},
+        {"folder4": "default"},
+        {"folder3": "default"},
+        "default"
+    ]
+}
