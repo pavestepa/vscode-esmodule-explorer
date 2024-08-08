@@ -1,6 +1,6 @@
 {
-  "name": "vscode-esmodule-explorer",
-  "displayName": "ESModule Explorer",
+  "name": "sorted-explorer",
+  "displayName": "Sorted Explorer",
   "description": "A custom explorer for JS/TS projects with custom sorting based on JSON configuration.",
   "version": "0.0.1",
   "engines": {
@@ -9,23 +9,28 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-  ],
+  "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
     "views": {
-        "explorer": [
-            {
-                "id": "vscodeESModuleExplorer",
-                "name": "ES Module Explorer"
-            }
-        ]
+      "explorer": [
+        {
+          "id": "sortedExplorer",
+          "name": "Sorted Explorer"
+        }
+      ]
     },
     "commands": [
-        {
-            "command": "vscode-esmodule-explorer.refresh",
-            "title": "Refresh ES Module Explorer"
-        }
+      {
+        "command": "sortedExplorer.refresh",
+        "title": "Refresh Sorted Explorer"
+      },
+      {
+        "command": "sortedExplorer.openFile",
+        "title": "Open File",
+        "category": "Sorted Explorer",
+        "icon": "$(edit)"
+      }
     ]
   },
   "scripts": {

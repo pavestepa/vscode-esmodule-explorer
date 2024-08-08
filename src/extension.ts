@@ -1,10 +1,14 @@
 import * as vscode from 'vscode';
 import { CustomExplorerProvider } from './CustomExplorer';
+import { ExplorerCommands } from './ExplorerCommands';
 
 export function activate(context: vscode.ExtensionContext) {
     const customExplorerProvider = new CustomExplorerProvider();
-    vscode.window.registerTreeDataProvider('vscodeESModuleExplorer', customExplorerProvider);
-    vscode.commands.registerCommand('vscode-esmodule-explorer.refresh', () => customExplorerProvider.refresh());
+    const explorerCommands = new ExplorerCommands(customExplorerProvider);
+    vscode.window.registerTreeDataProvider('sortedExplorer', customExplorerProvider);
+    vscode.commands.registerCommand('sortedExplorer.refresh', () => customExplorerProvider.refresh());
+    explorerCommands.register();
+
 }
 
 export function deactivate() {}
